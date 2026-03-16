@@ -15,7 +15,14 @@ def format_context(context):
 
 
 def chat(history):
-    last_message = history[-1]["content"]
+    raw = history[-1]["content"]
+    if isinstance(raw, list):
+        last_message = " ".join(
+            block.get("text", "") if isinstance(block, dict) else str(block)
+            for block in raw
+        )
+    else:
+        last_message = raw
     prior = history[:-1]
     answer, context = answer_question(last_message, prior)
     history.append({"role": "assistant", "content": answer})
@@ -59,3 +66,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

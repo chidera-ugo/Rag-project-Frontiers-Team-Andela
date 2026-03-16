@@ -1,0 +1,1 @@
+{"timestamp": "2026-03-16 10:29:27", "version": "v2", "eval_type": "retrieval", "metrics": {"mrr": 0.0, "ndcg": 0.0, "coverage": 0.0}, "by_category": {"comparative": 0.0, "direct_fact": 0.0, "holistic": 0.0, "numerical": 0.0, "relationship": 0.0, "spanning": 0.0, "temporal": 0.0}}
